@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Home</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/output.css">
+</head>
+<body>
+    <h1>Blog Posts</h1>
+    <a href="/create">Create a New Post</a>
+    <div>
+        <% users.forEach(user => { %>
+            <div class="post">
+                <h2><%= user.student_id %></h2>
+                <p><%= user.teacher_id %></p>
+                <p><%= user.content %></p>
+                <p><%= user.grade %></p>
+                <p><%= user.created_at %></p>
+                <!-- <p><%= user.updated_at %></p> -->
+                <a href="/edit/<%= user.id %>">Edit</a>
+                <form action="/delete/<%= user.id %>" method="POST" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </div>
+        <% }); %>
+    </div>
+</body>
+</html>

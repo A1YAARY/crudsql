@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/output.css">
+</head>
+<body>
+    <h1>Edit Blog Post</h1>
+    <% red.forEach(reds => { %>
+    <form action="/edit/<%= reds.id %>" method="POST">
+        <input type="text" name="Grade" placeholder="Grade" class ="flex "  required>
+        <input type="text" name="student" placeholder="student Id" class ="flex "  required>
+        <input type="text" name="teacher" placeholder="teacher Id" class ="flex "  required>
+        <input type="date" name="created" placeholder="created at" class ="flex "  required>
+        <input type="date" name="updated" placeholder="updated at" class ="flex "  required>
+        <textarea name="content" placeholder="Content" required></textarea>
+        <button type="submit">Update Post</button>
+    </form>
+    <% }); %>
+    <a href="/">Back to Home</a>
+</body>
+</html>
